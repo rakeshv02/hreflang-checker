@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hreflang Checker – Validate Live hreflang Annotations | Tabutility</title>
+  <meta name="description" content="Free hreflang checker. Paste any live URL to instantly validate its hreflang tags — detect missing x-default, broken reciprocal links, invalid language codes and more." />
+  <meta name="keywords" content="hreflang checker, hreflang validator, hreflang tester, international SEO checker, hreflang reciprocal check, hreflang tag validator, multilingual SEO audit" />
+  <link rel="canonical" href="https://hreflang-checker.tabutility.com/" />
+  <script>window.addEventListener('load',function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-78VZWJ5B1W');});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Hreflang Checker – Validate Live hreflang Annotations | Tabutility"/>
+  <meta property="og:description" content="Paste a live URL to validate its hreflang tags: detect missing x-default, broken reciprocal links, invalid language codes and self-reference errors. Free, instant."/>
+  <meta property="og:url" content="https://hreflang-checker.tabutility.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Tabutility"/>
+  <meta property="og:image" content="https://hreflang-checker.tabutility.com/og-card.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://hreflang-checker.tabutility.com/og-card.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Hreflang Checker – Validate Live hreflang Tags | Tabutility"/>
+  <meta name="twitter:description" content="Validate live hreflang annotations: missing x-default, broken reciprocal links, invalid codes and more. Free, instant."/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Hreflang Checker","description":"Validate the hreflang tags on any live page: detect missing x-default, non-reciprocal annotations, invalid language codes and relative URLs. A server-side proxy fetches the page so there are no CORS issues.","url":"https://hreflang-checker.tabutility.com/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tabutility","item":"https://tabutility.com"},{"@type":"ListItem","position":2,"name":"SEO Tools","item":"https://tabutility.com/#seo"},{"@type":"ListItem","position":3,"name":"Hreflang Checker","item":"https://hreflang-checker.tabutility.com/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the hreflang checker test?","acceptedAnswer":{"@type":"Answer","text":"The checker fetches the URL you provide (via a server-side proxy to avoid CORS issues), extracts all hreflang link tags from the HTML head and any Link HTTP headers, then runs four checks: (1) validates each language/region code against BCP 47 format, (2) looks for a required x-default tag, (3) verifies the page includes a self-referencing hreflang tag, and (4) fetches each linked alternate URL to confirm it points back — the reciprocal rule."}},{"@type":"Question","name":"Why is the reciprocal check important?","acceptedAnswer":{"@type":"Answer","text":"Hreflang annotations must be bidirectional. If your English page references the French page but the French page does not reference the English page back, Google may ignore the entire annotation cluster. Every page in a language set must link to every other page in the set, including itself. The reciprocal check fetches each linked alternate page and confirms it contains a reference back to the URL you submitted."}},{"@type":"Question","name":"What is x-default and why is it flagged as missing?","acceptedAnswer":{"@type":"Answer","text":"x-default is a special hreflang value that tells search engines which page to show when no language or region tag matches the user's locale — for example, an international home page or a language selector. It is optional, but Google recommends it when you have a clear fallback page. The checker flags its absence as a warning rather than an error."}},{"@type":"Question","name":"Does this tool work on password-protected or JavaScript-rendered pages?","acceptedAnswer":{"@type":"Answer","text":"The checker fetches the page's raw HTML just like a search-engine crawler. It does not execute JavaScript, so hreflang tags injected by client-side frameworks (React, Next.js via client rendering, Angular) will not appear unless the page is server-side rendered. Pages behind authentication or bot-blocking will return an error. Use server-side rendering or static generation to ensure crawlers can read your hreflang tags."}},{"@type":"Question","name":"How many alternate pages does the reciprocal check fetch?","acceptedAnswer":{"@type":"Answer","text":"The checker fetches up to six alternate pages in parallel to keep results fast. For large language sets, it tests a representative sample. If a linked URL returns an error or blocks crawlers, the reciprocal check for that URL is flagged as a warning rather than skipped silently."}}]}</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>" />
+  <link rel="alternate" hreflang="en" href="https://hreflang-checker.tabutility.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://hreflang-checker.tabutility.com/" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#0f172a;color:#f1f5f9;font-family:'Segoe UI',system-ui,Arial,sans-serif;line-height:1.6}
+    .site-nav{background:#1e293b;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+    .site-nav a{color:#a5b4fc;text-decoration:none;font-size:14px}
+    .site-nav a:hover{color:#fff}
+    .nav-brand{color:#fff;font-weight:700;font-size:16px}
+    #ad-top,#ad-bottom{text-align:center;padding:4px;background:#0f172a}
+    #app{max-width:760px;margin:8px auto;padding:0 16px}
+    h1{font-size:26px;margin:18px 0 6px;color:#fff}
+    .sub{color:#94a3b8;font-size:14px;margin-bottom:20px}
+    .card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px;margin-bottom:18px}
+    label{display:block;font-size:13px;font-weight:600;color:#94a3b8;margin:0 0 6px}
+    .input-row{display:flex;gap:10px;align-items:stretch}
+    input[type=url]{flex:1;background:#0f172a;color:#f1f5f9;border:1px solid #334155;border-radius:8px;padding:10px 14px;font-size:14px;font-family:inherit}
+    input[type=url]:focus{outline:none;border-color:#818cf8}
+    .btn{display:inline-flex;align-items:center;gap:6px;background:#4f46e5;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .15s}
+    .btn:hover{background:#4338ca}
+    .btn:disabled{background:#334155;color:#64748b;cursor:not-allowed}
+    .btn.sm{padding:6px 12px;font-size:12px;background:#334155}
+    .btn.sm:hover{background:#475569}
+
+    /* Status badges */
+    .badge{display:inline-flex;align-items:center;gap:5px;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:600}
+    .badge-pass{background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.25)}
+    .badge-warn{background:rgba(245,158,11,.12);color:#f59e0b;border:1px solid rgba(245,158,11,.25)}
+    .badge-error{background:rgba(248,113,113,.12);color:#f87171;border:1px solid rgba(248,113,113,.25)}
+    .badge-info{background:rgba(165,180,252,.12);color:#a5b4fc;border:1px solid rgba(165,180,252,.25)}
+
+    /* Results */
+    #results{display:none}
+    .section-head{font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+    .issue-list{display:flex;flex-direction:column;gap:8px}
+    .issue-row{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:8px;font-size:13px;color:#cbd5e1;line-height:1.4}
+    .issue-icon{flex-shrink:0;font-size:16px;margin-top:1px}
+
+    /* Tags table */
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    thead th{font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;padding:8px 10px;border-bottom:1px solid #334155;text-align:left;white-space:nowrap}
+    tbody tr:nth-child(even){background:#0a1020}
+    tbody td{padding:8px 10px;color:#cbd5e1;border-bottom:1px solid #1e293b;word-break:break-all}
+    tbody td:first-child{word-break:normal;white-space:nowrap}
+
+    /* Reciprocal table */
+    .recip-row{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid #1e293b;font-size:13px;flex-wrap:wrap}
+    .recip-row:last-child{border-bottom:none}
+    .recip-url{color:#a5b4fc;word-break:break-all;flex:1;min-width:0}
+    .recip-lang{flex-shrink:0;font-family:monospace;font-size:12px;color:#94a3b8;background:#0f172a;padding:2px 6px;border-radius:4px}
+
+    /* Summary strip */
+    .summary-strip{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .summary-item{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px 14px;flex:1;min-width:110px;text-align:center}
+    .summary-item .val{font-size:22px;font-weight:700;color:#a5b4fc}
+    .summary-item .lbl{font-size:11px;color:#64748b;margin-top:2px}
+
+    /* Loading */
+    .spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:#a5b4fc;border-radius:50%;animation:spin .7s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* SEO content */
+    .seo-content{max-width:760px;margin:26px auto;padding:0 16px;color:#cbd5e1;font-size:15px}
+    .seo-content h2{color:#fff;font-size:20px;margin:26px 0 10px}
+    .seo-content h3{color:#e2e8f0;font-size:16px;margin:18px 0 8px}
+    .seo-content p{margin-bottom:12px}
+    .seo-content ul{margin:0 0 12px 20px}
+    .seo-content li{margin-bottom:6px}
+    .seo-content code{background:#1e293b;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5b4fc}
+    footer{background:#1a1a2e;color:#94a3b8;text-align:center;padding:24px 16px;font-size:13px;margin-top:30px}
+    footer a{color:#a5b4fc;text-decoration:none}
+  </style>
+  <style id="tabutility-brand-v2">
+/* Canonical dark-surface spec (STYLE.md): indigo accent, white text on indigo */
+.btn,.toggle-btn.active,button.active{color:#fff!important}
+nav .brand{color:#fff}
+nav a:hover{color:#818cf8}
+input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
+/* AdSense not yet approved: hide all ad frames (container min-height still reserves space). Remove these two lines after approval. */
+ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe,.ad-container iframe{visibility:hidden!important}
+</style>
+</head>
+<body>
+  <nav class="site-nav"><span class="nav-brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
+  <div id="ad-top"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+  <div id="app">
+    <h1>🌐 Hreflang Checker</h1>
+    <p class="sub">Paste any live URL to validate its hreflang tags — checks language codes, x-default, self-references and reciprocal annotations server-side with no CORS issues.</p>
+
+    <div class="card">
+      <label for="urlInput">Page URL to check</label>
+      <div class="input-row">
+        <input type="url" id="urlInput" placeholder="https://example.com/en/page/" autocomplete="off" />
+        <button class="btn" id="checkBtn" type="button">
+          <span id="btnLabel">Check URL</span>
+          <span id="btnSpinner" class="spinner" style="display:none"></span>
+        </button>
+      </div>
+      <div id="urlError" style="font-size:12px;color:#f87171;margin-top:6px;display:none"></div>
+    </div>
+
+    <div id="results">
+      <!-- Summary strip -->
+      <div class="summary-strip">
+        <div class="summary-item"><div class="val" id="sumTags">—</div><div class="lbl">hreflang tags</div></div>
+        <div class="summary-item"><div class="val" id="sumPass">—</div><div class="lbl">Passed</div></div>
+        <div class="summary-item"><div class="val" id="sumWarn">—</div><div class="lbl">Warnings</div></div>
+        <div class="summary-item"><div class="val" id="sumErr">—</div><div class="lbl">Errors</div></div>
+      </div>
+
+      <!-- Validation issues -->
+      <div class="card" id="issuesCard">
+        <div class="section-head">Validation results</div>
+        <div class="issue-list" id="issueList"></div>
+      </div>
+
+      <!-- Tags found -->
+      <div class="card" id="tagsCard">
+        <div class="section-head">hreflang tags found</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>hreflang</th><th>href</th><th>Status</th></tr></thead>
+            <tbody id="tagsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Reciprocal check -->
+      <div class="card" id="recipCard">
+        <div class="section-head">Reciprocal link check</div>
+        <div id="recipList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ad-mid" style="text-align:center;padding:4px;background:#0f172a"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+  <div class="seo-content">
+    <h2>What does the hreflang checker validate?</h2>
+    <p>After you implement hreflang tags using a generator or a CMS plugin, you need a way to verify the live result is correct. This tool fetches the page server-side — bypassing any CORS restrictions — and runs four key checks that mirror how Google validates international SEO annotations.</p>
+
+    <h3>1. Language code validation</h3>
+    <p>Every <code>hreflang</code> attribute must use a valid BCP 47 language tag: a two- or three-letter ISO 639-1 language code (e.g. <code>en</code>, <code>fr</code>, <code>de</code>), optionally followed by a hyphen and an ISO 3166-1 Alpha-2 country code (e.g. <code>en-gb</code>, <code>fr-ca</code>, <code>zh-cn</code>). Common mistakes include <code>en-uk</code> instead of <code>en-gb</code>, or <code>zh</code> when you mean <code>zh-cn</code>. Invalid codes are silently ignored by Google.</p>
+
+    <h3>2. x-default check</h3>
+    <p><code>x-default</code> is a special hreflang value that designates the fallback page for users whose locale matches none of your language variants. It is optional but recommended by Google for any site with a language-agnostic home page or selector. The checker flags its absence as a warning.</p>
+
+    <h3>3. Self-reference check</h3>
+    <p>Every page in an hreflang set must include a tag pointing to itself. A missing self-reference is a common implementation error — the page's own URL must appear in the set alongside all the other language variants.</p>
+
+    <h3>4. Reciprocal link check</h3>
+    <p>The reciprocal rule is the most commonly broken hreflang requirement. If your English page references the French page, the French page must reference the English page back. The checker fetches up to six of your alternate URLs and confirms each one contains a link back to the page you submitted. Failures here are errors, not warnings — Google will discard the whole annotation cluster if reciprocity is broken.</p>
+
+    <h2>Why use a server-side proxy?</h2>
+    <p>Browser-based tools can only fetch pages that return permissive CORS headers. Because most websites do not allow arbitrary cross-origin requests, a browser-only checker would fail on nearly every real-world URL. This tool sends the fetch request from the server, just like a search-engine bot would, so you get the real HTML the crawler sees.</p>
+
+    <h2>Limitations to be aware of</h2>
+    <ul>
+      <li><strong>JavaScript-rendered tags</strong> — the checker reads the raw HTML, not the post-JavaScript DOM. If your framework injects hreflang tags via client-side rendering (some React or Angular setups), they will not appear here. Use SSR or static generation to make hreflang visible to crawlers.</li>
+      <li><strong>Bot-blocked pages</strong> — some sites block non-browser requests. If the page returns a 4xx or 5xx error, the checker reports it but cannot inspect the HTML.</li>
+      <li><strong>Large language sets</strong> — the reciprocal check fetches up to six alternate pages to keep results fast. For sites with many languages, verify the remaining pages manually or run the checker from each variant's URL.</li>
+    </ul>
+
+    <h2>How to fix common hreflang errors</h2>
+    <h3>Missing reciprocal links</h3>
+    <p>Paste the same complete hreflang block into every language variant. The <a href="https://hreflang-tag-generator.tabutility.com/" style="color:#a5b4fc">Hreflang Tag Generator</a> outputs the full set — copy the identical block to every page in the language cluster.</p>
+    <h3>Invalid language code</h3>
+    <p>Replace the invalid code with a correct BCP 47 tag. Use <code>en-gb</code> not <code>en-uk</code>, <code>zh-cn</code> for Simplified Chinese, <code>zh-tw</code> for Traditional. Check the full list of codes in the generator.</p>
+    <h3>Missing self-reference</h3>
+    <p>Add a <code>&lt;link rel="alternate" hreflang="en" href="https://example.com/en/" /&gt;</code> tag on the English page pointing to itself (replace with your own language and URL).</p>
+    <h3>Missing x-default</h3>
+    <p>Add <code>&lt;link rel="alternate" hreflang="x-default" href="https://example.com/" /&gt;</code> pointing to your language-neutral home page or language selector on every page in the set.</p>
+  </div>
+
+  <div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #334155" onclick="window.open('https://www.amazon.com/s?k=international+SEO+books&tag=tabutility-20','_blank','noopener noreferrer')" title="Browse international SEO books on Amazon">
+    <span style="font-size:28px;flex-shrink:0">📚</span>
+    <div style="min-width:0">
+      <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Master international SEO</div>
+      <div style="font-size:12px;color:#94a3b8">Browse SEO &amp; content marketing books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
+      <div style="font-size:10px;color:#475569;margin-top:3px">As an Amazon Associate we earn from qualifying purchases.</div>
+    </div>
+  </div>
+
+  <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto">Related Tools</h2>
+  <div style="max-width:640px;margin:0 auto 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+    <a href="https://hreflang-tag-generator.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+      <div style="font-size:13px;font-weight:600;color:#f1f5f9">Hreflang Tag Generator</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:2px">SEO</div>
+    </a>
+    <a href="https://meta-tags-generator.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+      <div style="font-size:13px;font-weight:600;color:#f1f5f9">Meta Tags Generator</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:2px">SEO</div>
+    </a>
+    <a href="https://schema-markup-generator.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+      <div style="font-size:13px;font-weight:600;color:#f1f5f9">Schema Markup Generator</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:2px">SEO</div>
+    </a>
+    <a href="https://serp-snippet-preview.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+      <div style="font-size:13px;font-weight:600;color:#f1f5f9">SERP Snippet Preview</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:2px">SEO</div>
+    </a>
+  </div>
+
+  <div id="ad-bottom"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+  <footer>
+    <p>© 2026 Tabutility · <a href="https://tabutility.com">More free tools →</a></p>
+  </footer>
+
+<script>
+var API_BASE = 'https://api.tabutility.com';
+
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+var checkBtn = document.getElementById('checkBtn');
+var btnLabel = document.getElementById('btnLabel');
+var btnSpinner = document.getElementById('btnSpinner');
+var urlInput = document.getElementById('urlInput');
+var urlError = document.getElementById('urlError');
+var results = document.getElementById('results');
+
+function setLoading(on){
+  checkBtn.disabled = on;
+  btnLabel.textContent = on ? 'Checking…' : 'Check URL';
+  btnSpinner.style.display = on ? 'inline-block' : 'none';
+}
+
+function showError(msg){
+  urlError.textContent = msg;
+  urlError.style.display = 'block';
+}
+function clearError(){ urlError.style.display='none'; }
+
+function issueIcon(type){
+  return type==='pass' ? '✅' : type==='warn' ? '⚠️' : type==='error' ? '❌' : 'ℹ️';
+}
+
+function renderResults(data){
+  results.style.display = 'block';
+
+  var passes = (data.issues||[]).filter(function(i){return i.type==='pass';}).length;
+  var warns  = (data.issues||[]).filter(function(i){return i.type==='warn';}).length;
+  var errors = (data.issues||[]).filter(function(i){return i.type==='error';}).length;
+
+  document.getElementById('sumTags').textContent = (data.entries||[]).length;
+  document.getElementById('sumPass').textContent = passes;
+  document.getElementById('sumWarn').textContent = warns;
+  document.getElementById('sumErr').textContent = errors;
+
+  // Issues
+  var issueList = document.getElementById('issueList');
+  if(!data.issues||!data.issues.length){
+    issueList.innerHTML = '<div style="color:#64748b;font-size:13px;padding:8px 0">No issues found.</div>';
+  } else {
+    issueList.innerHTML = data.issues.map(function(issue){
+      return '<div class="issue-row"><span class="issue-icon">'+issueIcon(issue.type)+'</span><span>'+escHtml(issue.message)+'</span></div>';
+    }).join('');
+  }
+
+  // Tags table
+  var tagsCard = document.getElementById('tagsCard');
+  var tagsBody = document.getElementById('tagsBody');
+  if(!data.entries||!data.entries.length){
+    tagsCard.style.display = 'none';
+  } else {
+    tagsCard.style.display = '';
+    tagsBody.innerHTML = data.entries.map(function(e){
+      var badge = e.valid
+        ? '<span class="badge badge-pass">Valid</span>'
+        : '<span class="badge badge-error">Invalid</span>';
+      return '<tr><td><code style="font-size:12px;color:#a5b4fc">'+escHtml(e.hreflang)+'</code></td><td>'+escHtml(e.href)+'</td><td>'+badge+'</td></tr>';
+    }).join('');
+  }
+
+  // Reciprocal
+  var recipCard = document.getElementById('recipCard');
+  var recipList = document.getElementById('recipList');
+  if(!data.reciprocal||!data.reciprocal.length){
+    recipCard.style.display = 'none';
+  } else {
+    recipCard.style.display = '';
+    recipList.innerHTML = data.reciprocal.map(function(r){
+      var statusBadge;
+      if(r.fetchError){
+        statusBadge = '<span class="badge badge-warn">Could not fetch</span>';
+      } else if(r.pointsBack){
+        statusBadge = '<span class="badge badge-pass">✓ Points back</span>';
+      } else {
+        statusBadge = '<span class="badge badge-error">Missing reciprocal</span>';
+      }
+      return '<div class="recip-row">'+
+        '<span class="recip-lang">'+escHtml(r.hreflang)+'</span>'+
+        '<span class="recip-url">'+escHtml(r.url)+'</span>'+
+        statusBadge+
+      '</div>';
+    }).join('');
+  }
+
+  results.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+async function runCheck(){
+  clearError();
+  var url = urlInput.value.trim();
+  if(!url){
+    showError('Please enter a URL.');
+    return;
+  }
+  try{ new URL(url); } catch(e){
+    showError('Enter a valid absolute URL starting with https:// or http://');
+    return;
+  }
+
+  setLoading(true);
+  results.style.display = 'none';
+  try {
+    var resp = await fetch(API_BASE+'/api/fetch-hreflang', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({url: url})
+    });
+    var data = await resp.json();
+    if(data.error){
+      showError(data.error);
+    } else {
+      renderResults(data);
+    }
+  } catch(err){
+    showError('Network error — could not reach the checker. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+}
+
+checkBtn.addEventListener('click', runCheck);
+urlInput.addEventListener('keydown', function(e){ if(e.key==='Enter') runCheck(); });
+</script>
+</body>
+</html>
