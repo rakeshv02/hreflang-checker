@@ -267,7 +267,108 @@ ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe,.ad-container iframe{visibilit
 <div>Free, private, browser-based tools. No sign-up, no tracking.</div>
 <div style="margin-top:6px"><a href="https://tabutility.com" style="color:#818cf8;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#94a3b8;text-decoration:none">Blog</a> · <a href="https://tabutility.com/about/" style="color:#94a3b8;text-decoration:none">About</a> · <a href="https://tabutility.com/privacy-policy/" style="color:#94a3b8;text-decoration:none">Privacy</a> · <a href="https://tabutility.com/contact/" style="color:#94a3b8;text-decoration:none">Contact</a></div>
 <div style="margin-top:6px;color:#64748b">© 2026 Tabutility</div>
-</footer>
+
+  <section id="seo-content" style="background:#1a1a2e;color:#e2e8f0;padding:60px 20px;margin-top:40px;border-top:1px solid #2d3748;">
+    <div style="max-width:860px;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;">
+      <h2 style="font-size:2rem;font-weight:700;color:#f1f5f9;margin-bottom:24px;">How to Use the Hreflang Checker</h2>
+      <p style="margin-bottom:16px;color:#cbd5e1;">The Hreflang Checker fetches a live URL and validates all hreflang annotations found in the <head> and HTTP headers. It checks for the most common implementation errors: missing return links, invalid language codes, missing x-default, self-referential tags, and mismatched URLs.</p>
+      <p style="margin-bottom:16px;color:#cbd5e1;">Enter any live URL and the checker fetches the page, extracts all hreflang tags, verifies each alternate URL by checking that it exists and has a return link back to your page, and reports errors and warnings for each issue found.</p>
+      <p style="margin-bottom:16px;color:#cbd5e1;">The most critical check is return link validation: every URL listed in a hreflang set must itself contain hreflang tags pointing to all other pages in the set (including back to itself). Without complete return links, Google may ignore the entire hreflang implementation. This is the most frequently found hreflang error in technical SEO audits.</p>
+
+      <div style="background:#0f172a;border:1px solid #334155;border-radius:12px;padding:28px;margin:32px 0;">
+        <h3 style="font-size:1.2rem;font-weight:600;color:#f1f5f9;margin-bottom:16px;">📊 Worked Example</h3>
+        <p style="color:#94a3b8;margin:0 0 12px;">Common hreflang errors the checker identifies:</p>
+        <ul style="list-style:none;padding:0;margin:0;color:#cbd5e1;">
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;"><strong style="color:#f87171;">❌ Missing return link</strong> — French page doesn't reference English page</li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;"><strong style="color:#f87171;">❌ Invalid language code</strong> — 'english' instead of 'en'</li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;"><strong style="color:#f87171;">❌ Missing x-default</strong> — no fallback page designated</li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;"><strong style="color:#f1f5f9;">⚠️ Non-canonical URL</strong> — uses www when canonical is non-www</li>
+          <li style="padding:6px 0;"><strong style="color:#34d399;">✅ Valid</strong> — all alternates return link correctly</li>
+        </ul>
+      </div>
+
+      <h3 style="font-size:1.4rem;font-weight:600;color:#f1f5f9;margin:32px 0 16px;">Common Use Cases</h3>
+      <ul style="list-style:none;padding:0;margin:0 0 32px;">
+        <li style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;">✅ Verifying hreflang implementation is correct on any live URL</li>
+        <li style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;">✅ Auditing hreflang before a multilingual site launch</li>
+        <li style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;">✅ Diagnosing why Google isn't showing the correct regional version</li>
+        <li style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;">✅ Identifying missing return links in hreflang sets</li>
+        <li style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;">✅ Checking for invalid ISO language or country codes</li>
+        <li style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;">✅ Validating hreflang after migrating a multilingual website</li>
+      </ul>
+
+      <h3 style="font-size:1.4rem;font-weight:600;color:#f1f5f9;margin:32px 0 24px;">Frequently Asked Questions</h3>
+      <div style="margin-bottom:24px;">
+        <h4 style="font-size:1rem;font-weight:600;color:#f1f5f9;margin-bottom:8px;">Why are return links so important in hreflang?</h4>
+        <p style="color:#cbd5e1;margin:0;">Google requires every page in a hreflang cluster to reference all other pages, including itself. Without return links, Google cannot confirm the relationship is intentional and mutual — it may indicate misconfiguration. Google's documentation states: 'If a page A is the English alternate for page B in French, page B must also be listed as the French alternate for page A.'</p>
+      </div>
+      <div style="margin-bottom:24px;">
+        <h4 style="font-size:1rem;font-weight:600;color:#f1f5f9;margin-bottom:8px;">What language codes should I use for hreflang?</h4>
+        <p style="color:#cbd5e1;margin:0;">Use ISO 639-1 two-letter language codes (en, fr, de, es, zh, ja) and optionally ISO 3166-1 alpha-2 country codes (US, GB, AU, CA, FR). Combine as 'en-GB', 'en-US', 'zh-TW', 'zh-CN'. Invalid codes include full language names ('english'), three-letter codes ('eng'), or made-up codes. Check ISO 639-1 and ISO 3166-1 references for valid codes.</p>
+      </div>
+      <div style="margin-bottom:24px;">
+        <h4 style="font-size:1rem;font-weight:600;color:#f1f5f9;margin-bottom:8px;">Can hreflang tags be in the sitemap instead of HTML?</h4>
+        <p style="color:#cbd5e1;margin:0;">Yes. Google accepts hreflang in three places: HTML <head> link tags, HTTP response headers, and XML sitemaps. Sitemap implementation is often easier for large sites. Each URL entry in the sitemap must include <xhtml:link rel='alternate'> entries for all language variants. You can mix methods across a site, but don't duplicate for the same page.</p>
+      </div>
+      <div style="margin-bottom:24px;">
+        <h4 style="font-size:1rem;font-weight:600;color:#f1f5f9;margin-bottom:8px;">Why might my hreflang not be working even though it validates?</h4>
+        <p style="color:#cbd5e1;margin:0;">Possible reasons: pages aren't indexed yet, crawl budget prevents Google from fetching alternate pages, hreflang is canonicalized to a different URL, the page content doesn't actually serve different languages (Google ignores hreflang if content is identical), or there's a conflict between robots.txt and the alternate pages being crawled.</p>
+      </div>
+      <div style="margin-bottom:24px;">
+        <h4 style="font-size:1rem;font-weight:600;color:#f1f5f9;margin-bottom:8px;">Does hreflang work for separate domains or subdomains?</h4>
+        <p style="color:#cbd5e1;margin:0;">Yes. Hreflang works across different URLs regardless of structure: subdirectories (example.com/fr/), subdomains (fr.example.com), or separate domains (example.fr). Simply ensure all alternate URLs are correctly linked in both directions. Using separate domains for major markets is a legitimate strategy, though it requires more domain authority building per site.</p>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why are return links so important in hreflang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google requires every page in a hreflang cluster to reference all other pages, including itself. Without return links, Google cannot confirm the relationship is intentional and mutual — it may indicate misconfiguration. Google's documentation states: 'If a page A is the English alternate for page B in French, page B must also be listed as the French alternate for page A.'"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What language codes should I use for hreflang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use ISO 639-1 two-letter language codes (en, fr, de, es, zh, ja) and optionally ISO 3166-1 alpha-2 country codes (US, GB, AU, CA, FR). Combine as 'en-GB', 'en-US', 'zh-TW', 'zh-CN'. Invalid codes include full language names ('english'), three-letter codes ('eng'), or made-up codes. Check ISO 639-1 and ISO 3166-1 references for valid codes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can hreflang tags be in the sitemap instead of HTML?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Google accepts hreflang in three places: HTML <head> link tags, HTTP response headers, and XML sitemaps. Sitemap implementation is often easier for large sites. Each URL entry in the sitemap must include <xhtml:link rel='alternate'> entries for all language variants. You can mix methods across a site, but don't duplicate for the same page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why might my hreflang not be working even though it validates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Possible reasons: pages aren't indexed yet, crawl budget prevents Google from fetching alternate pages, hreflang is canonicalized to a different URL, the page content doesn't actually serve different languages (Google ignores hreflang if content is identical), or there's a conflict between robots.txt and the alternate pages being crawled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does hreflang work for separate domains or subdomains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Hreflang works across different URLs regardless of structure: subdirectories (example.com/fr/), subdomains (fr.example.com), or separate domains (example.fr). Simply ensure all alternate URLs are correctly linked in both directions. Using separate domains for major markets is a legitimate strategy, though it requires more domain authority building per site."
+      }
+    }
+  ]
+}
+  </script>
+  </footer>
 
 <script>
 var API_BASE = 'https://api.tabutility.com';
